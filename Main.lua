@@ -6,6 +6,7 @@ print("[5] = Random Number Generator")
 print()
 
 function InputLoop()
+    local pi = 3.141592653589793238462643383279502884197
     local input = io.read()
 
     if input == "1" then
@@ -28,6 +29,7 @@ function InputLoop()
             else
                 print("Error evaluating expression!")
                 InputLoop()
+                
             end
         else
             print("Invalid input! Please enter a valid math expression.")
@@ -36,14 +38,17 @@ function InputLoop()
         print("Enter a number")
         local answer = io.read()
         print("Result: " .. math.sin(answer))
+        InputLoop()
     elseif input == "3" then
         print("Enter a number")
         local answer = io.read()
         print("Result: " .. math.cos(answer))
+        InputLoop()
     elseif input == "4" then
         print("Enter a number")
         local answer = io.read()
         print("Result: " .. math.tan(answer))
+        InputLoop()
     elseif input == "5" then
         print("Enter minimum")
         local answer1 = io.read()
@@ -51,6 +56,7 @@ function InputLoop()
         local answer2 = io.read()
     
         print("Result: " .. math.random(answer1, answer2))
+        InputLoop()
     end
 end
 
