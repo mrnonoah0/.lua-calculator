@@ -28,7 +28,7 @@ function InputLoop()
                 end
             else
                 print("Error evaluating expression!")
-                
+                InputLoop()
             end
         else
             print("Invalid input! Please enter a valid math expression.")
