@@ -6,7 +6,6 @@ print("[5] = Random Number Generator")
 print()
 
 function InputLoop()
-    local pi = 3.141592653589793238462643383279502884197
     local input = io.read()
 
     if input == "1" then
