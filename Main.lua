@@ -38,6 +38,7 @@ local function displayMenu()
         "[11] Factorial (!)",
         "[12] Modulus (%)",
         "[13] Greatest Common Divisor (GCD)",
+        "[14] Function f(x)",
         "[0] Exit"
     }
     for _, line in ipairs(menu) do print(line) end
@@ -68,6 +69,36 @@ local function basicOperations()
     end
 end
 
+local function functionFofX()
+    io.write("Enter a function of x: ")
+    local funcStr = io.read()
+    
+    funcStr = funcStr:gsub("f%(x%)%s*=", "")
+    funcStr = funcStr:gsub("%s", "")
+    
+    local function evaluateF(x)
+        local parsedFunc = funcStr:gsub("([%d%.%-]*)x", function(coeff)
+            if coeff == "" or coeff == "-" then
+                return coeff .. tostring(x)
+            else
+                return tostring(tonumber(coeff) * x)
+            end
+        end)
+        
+        local func, err = load("return " .. parsedFunc)
+        if func then
+            local success, result = pcall(func)
+            if success then
+                return result
+            end
+        end
+        return "Invalid function"
+    end
+    
+    local xValue = inputNumber("Enter a value for x")
+    print("f(" .. xValue .. ") = " .. evaluateF(xValue))
+end
+
 local actions = {
     [1] = basicOperations,
     [2] = function() print("Result: " .. math.sin(inputNumber("Enter a number"))) end,
@@ -75,7 +106,7 @@ local actions = {
     [4] = function() print("Result: " .. math.tan(inputNumber("Enter a number"))) end,
     [5] = function() print("Result: " .. math.random(inputNumber("Enter min"), inputNumber("Enter max"))) end,
     [6] = function() print("Result: " .. math.sqrt(inputNumber("Enter a number"))) end,
-    [7] = function() print("Result: " .. math.pow(x, y)(inputNumber("Enter base"), inputNumber("Enter exponent"))) end,
+    [7] = function() print("Result: " .. math.pow(inputNumber("Enter base"), inputNumber("Enter exponent"))) end,
     [8] = function() print("Result: " .. math.log(inputNumber("Enter a number"))) end,
     [9] = function() print("Result: " .. math.abs(inputNumber("Enter a number"))) end,
     [10] = function() 
@@ -84,7 +115,8 @@ local actions = {
     end,
     [11] = function() print("Result: " .. factorial(inputNumber("Enter a number"))) end,
     [12] = function() print("Result: " .. (inputNumber("Enter first number") % inputNumber("Enter second number"))) end,
-    [13] = function() print("Result: " .. gcd(inputNumber("Enter first number"), inputNumber("Enter second number"))) end
+    [13] = function() print("Result: " .. gcd(inputNumber("Enter first number"), inputNumber("Enter second number"))) end,
+    [14] = functionFofX
 }
 
 local function main()
