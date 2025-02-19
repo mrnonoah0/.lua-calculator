@@ -6,19 +6,13 @@ This repository contains a free-to-use Lua-based math utility script designed fo
 
 🔹 Features
 
-✅ Basic arithmetic operations (+, -, *, /)
-
-✅ Trigonometric functions (sin, cos, tan)
-
-✅ Square root, logarithms, and exponentiation
-
-✅ Absolute value, rounding, and modulus calculations
-
-✅ Random number generation
-
-✅ Factorial and Greatest Common Divisor (GCD) functions
-
-✅ Optimized and structured for easy readability
+✅ Basic arithmetic operations (+, -, *, /)                                                                                                                                                                                                                                                                                     
+✅ Trigonometric functions (sin, cos, tan)                                                                                                                                                                                                                                                                                    
+✅ Square root, logarithms, and exponentiation                                                                                                                                                                                                                                                                                    
+✅ Absolute value, rounding, and modulus calculations                                                                                                                                                                                                                                                                                    
+✅ Random number generation                                                                                                                                                                                                                                                                                                                                                       
+✅ Factorial and Greatest Common Divisor (GCD) functions                                                                                                                                                                                                                                                                                    
+✅ Optimized and structured for easy readability                                                                                                                                                                                                                                                                                                                                  
 
 📜 License
 This script is provided without restrictions—you are free to use, modify, and distribute it as you wish. No credit is required. For more details, check the LICENSE file in the repository.
