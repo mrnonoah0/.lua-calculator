@@ -1,4 +1,5 @@
 #Lua calculator
+
 Math Utility Script (Free-to-Use)
 This repository contains a free-to-use Lua-based math utility script designed for educational and development purposes. It serves as a solid foundation for further modifications, enhancements, and expansions.
 
